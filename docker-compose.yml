@@ -20,8 +20,10 @@ services:
     depends_on:
       - mongo
     volumes:
-      - ./backend/src:/usr/src/app/src
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
       - ./.env:/usr/src/app/.env
+    command: npm run dev
 
   frontend:
     build: ./frontend

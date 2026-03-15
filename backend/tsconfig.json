@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    /* Base Options */
+    "target": "ESNext",
+    // Uses the latest JS features supported by Node 20
+    "module": "NodeNext",
+    // Required for ESM (type: module)
+    "moduleResolution": "NodeNext",
+    // Ensures imports work correctly with ESM logic
+    "lib": [
+      "ESNext"
+    ],
+    /* Path Aliases */
+    "baseUrl": ".",
+    "paths": {
+      "@config/*": [
+        "src/config/*"
+      ],
+      "@models/*": [
+        "src/models/*"
+      ],
+      "@controllers/*": [
+        "src/controllers/*"
+      ],
+      "@routes/*": [
+        "src/routes/*"
+      ]
+    },
+    /* Strictness & Safety */
+    "strict": true,
+    "esModuleInterop": true,
+    // Fixes compatibility between CommonJS and ESM
+    "skipLibCheck": true,
+    // Speeds up compilation by skipping type checks of declarations files
+    "forceConsistentCasingInFileNames": true,
+    /* Build Output */
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "sourceMap": true,
+    // Helps with debugging in VS Code
+    "removeComments": true
+  },
+  "ts-node": {
+    "esm": true,
+    // Critical for ts-node to work with "type": "module"
+    "experimentalSpecifiers": true
+    // Helps resolve path aliases in ESM
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
